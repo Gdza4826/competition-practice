@@ -1,5 +1,4 @@
 word = input()
-
 list01 = []
 list02 = []
 list03 = []
@@ -9,14 +8,12 @@ for l in word:
     list02.append(l)
 
 for i in range(len(list02)):
-    # print(i)
     for j in list02:
         list01.append(j)
     for k in range(len(list01)):
         x = x + 1
         list01.pop()
         list01.pop(0)
-        # print(list01)
         if len(list01) == 1 + (i * 2) or len(list01) == 2 + (i * 2):
             print(" "*x,end="")
             for li in list01:
