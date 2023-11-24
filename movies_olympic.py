@@ -1,42 +1,40 @@
-episode = int(input())
-episode_price = []
-episode_price2 = []
-price_left = 0
-price_ls = []
-customer_price = int(input())
+episode_n_person = input()
+ep_ps_ls_raw = episode_n_person.split()
+ep_ps_ls_edit = [] # use
+for i in ep_ps_ls_raw:
+    ep_ps_ls_edit.append(int(i))
 
-for i in range(episode):
-    price_ep = int(input())
-    episode_price.append(price_ep)
-    episode_price2.append(price_ep)
+price_episode = input()
+price_episode_raw = price_episode.split()
+price_episode_edit = [] # use
 
-for i in episode_price2:
-    if i < 0:
-        episode_price2.remove(i)
+for i in price_episode_raw:
+    price_episode_edit.append(int(i))
 
-min_ls = min(episode_price2)
-if customer_price < min_ls:
-    print("0")
-else:
-    for i in episode_price:
-        price_left += i
-        price_ls.append(price_left)
+money_ls = []
 
-    price_ls.reverse()
+for i in range(ep_ps_ls_edit[1]):
+    money = int(input())
+    money_ls.append(money)
 
+episode_ls_debug = []
+debug_1 = 0
 
-    for i in price_ls:
-        if i > customer_price:
-            price_ls.pop(0)
-        elif i <= customer_price:
+for j in price_episode_edit:
+    debug_1 = debug_1 + j
+    episode_ls_debug.append(debug_1)
+
+episode_ls_debug.reverse()
+
+for raca in money_ls:
+    debug_2 = 0
+    for l in range(len(episode_ls_debug)):
+        if episode_ls_debug[l] > raca:
+            debug_2 = debug_2 + 1
+    if debug_2 == len(episode_ls_debug):
+        print("0 debug")
+    for k in range(len(episode_ls_debug)):
+        if episode_ls_debug[k] <= raca:
+            print(len(episode_ls_debug) - (k))
             break
-            
-    for i in price_ls:
-        if i <= customer_price:
-            break
-        else:
-            price_ls.pop(0)
-
-    print(len(price_ls))
-
 
