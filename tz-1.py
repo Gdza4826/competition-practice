@@ -1,10 +1,3 @@
-# person = int(input())
-# customer_price = []
-
-# for i in range(person):
-#     money = int(input())
-#     customer_price.append(money)
-
 episode = int(input())
 person = int(input())
 episode_price = []
