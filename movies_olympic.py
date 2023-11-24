@@ -32,7 +32,7 @@ for raca in money_ls:
         if episode_ls_debug[l] > raca:
             debug_2 = debug_2 + 1
     if debug_2 == len(episode_ls_debug):
-        print("0 debug")
+        print("0")
     for k in range(len(episode_ls_debug)):
         if episode_ls_debug[k] <= raca:
             print(len(episode_ls_debug) - (k))
