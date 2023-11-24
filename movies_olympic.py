@@ -24,7 +24,6 @@ else:
 
     price_ls.reverse()
 
-
     for i in price_ls:
         if i > customer_price:
             price_ls.pop(0)
@@ -38,5 +37,6 @@ else:
             price_ls.pop(0)
 
     print(len(price_ls))
+    print(price_ls)
 
 
