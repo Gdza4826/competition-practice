@@ -1,48 +1,33 @@
-episode = int(input())
-person = int(input())
-episode_price = []
-episode_price2 = []
-price_left = 0
-price_ls = []
-customer_price = []
+episode_n = int(input()) #thon
+episode_ls = [] # list01
+episode_ls_debug = [] # list02
+person_n = int(input())
+money_ls = [] #raca
+debug_1 = 0
 
-for i in range(episode):
-    price_ep = int(input())
-    episode_price.append(price_ep)
-    episode_price2.append(price_ep)
+for i in range(episode_n):
+    price_episode = int(input())
+    episode_ls.append(price_episode)
 
-for i in range(person):
-    money = int(input())
-    customer_price.append(money)
+for i in range(person_n):
+    money_each = int(input())
+    money_ls.append(money_each)
 
-for customer_pr in customer_price:
-    for i in episode_price2:
-        if i < 0:
-            episode_price2.remove(i)
-    min_ls = min(episode_price2)
-    if customer_pr < min_ls:
-        print("0")
-    else:
-        for i in episode_price:
-            price_left += i
-            price_ls.append(price_left)
+for j in episode_ls:
+    debug_1 = debug_1 + j
+    episode_ls_debug.append(debug_1)
 
-        price_ls.reverse()
+episode_ls_debug.reverse()
 
-        for i in price_ls:
-            if i > customer_pr:
-                price_ls.pop(0)
-            elif i <= customer_pr:
-                break
-                
-        for i in price_ls:
-            if i <= customer_pr:
-                break
-            else:
-                price_ls.pop(0)
+for raca in money_ls:
+    debug_2 = 0
+    for l in range(len(episode_ls_debug)):
+        if episode_ls_debug[l] > raca:
+            debug_2 = debug_2 + 1
+    if debug_2 == len(episode_ls_debug):
+        print("0 debug")
+    for k in range(len(episode_ls_debug)):
+        if episode_ls_debug[k] <= raca:
+            print(len(episode_ls_debug) - (k))
+            break
 
-        print(len(price_ls))
-        print(price_ls)
-
-print(episode_price)
-print(customer_price)

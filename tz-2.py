@@ -1,37 +1,40 @@
-thon = int(input())
-raca = int(input())
+episode_n_person = input()
+ep_ps_ls_raw = episode_n_person.split()
+ep_ps_ls_edit = [] # use
+for i in ep_ps_ls_raw:
+    ep_ps_ls_edit.append(int(i))
 
-list01 = []
-list02 = []
-x = 0
-y = 0
-for i in range(thon):
-    racathon = int(input())
-    list01.append(racathon)
+price_episode = input()
+price_episode_raw = price_episode.split()
+price_episode_edit = [] # use
 
-print(list01)
+for i in price_episode_raw:
+    price_episode_edit.append(int(i))
 
-for j in list01:
-    x = x + j
-    list02.append(x)
+money_ls = []
 
-# print(list02)
+for i in range(ep_ps_ls_edit[1]):
+    money = int(input())
+    money_ls.append(money)
 
-list02.reverse()
+episode_ls_debug = []
+debug_1 = 0
 
-print(list02)
+for j in price_episode_edit:
+    debug_1 = debug_1 + j
+    episode_ls_debug.append(debug_1)
 
-for l in range(len(list02)):
-    if list02[l] > raca:
-        y = y + 1
-if y == len(list02):
-    print("0")
-else:
-    pass
+episode_ls_debug.reverse()
 
-for k in range(len(list02)):
-    if list02[k] <= raca:
-        print(len(list02) - (k))
-        break
-
+for raca in money_ls:
+    debug_2 = 0
+    for l in range(len(episode_ls_debug)):
+        if episode_ls_debug[l] > raca:
+            debug_2 = debug_2 + 1
+    if debug_2 == len(episode_ls_debug):
+        print("0 debug")
+    for k in range(len(episode_ls_debug)):
+        if episode_ls_debug[k] <= raca:
+            print(len(episode_ls_debug) - (k))
+            break
 
