@@ -45,4 +45,5 @@ int main(){
     }else{
         cout << dates[indexReturn];
     }
+    return 0;
 }
